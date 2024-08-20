@@ -1,4 +1,4 @@
-// ✨ create your `quotesSlice` in this module
+import {createSlice} from '@reduxjs/toolkit' // ✨ create your `quotesSlice` in this module
 
 let id = 1
 const getNextId = () => id++
@@ -10,7 +10,7 @@ const initialState = {
       id: getNextId(),
       quoteText: "Don't cry because it's over, smile because it happened.",
       authorName: "Dr. Seuss",
-      apocryphal: false,
+      apocryphal: true,
     },
     {
       id: getNextId(),
@@ -26,3 +26,23 @@ const initialState = {
     },
   ],
 }
+
+export const quotesSlice = createSlice({
+
+   name: 'quotes',
+   initialState, 
+   reducers: {
+    toggleVisibility(state, action){
+
+    },
+    deleteQuote(state, action){
+
+    },
+    editQuoteAuthenticity(state, action){
+
+    },
+    setHighLightedQuote(state, action){    }
+   }
+})
+
+export default quotesSlice.reducer
